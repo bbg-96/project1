@@ -1,7 +1,8 @@
-package com.example.demo.service;
+package com.example.demo.users.service;
 
-import com.example.demo.domain.User;                         // 도메인 User
-import com.example.demo.repository.UserRepository;
+import com.example.demo.users.domain.User;
+import com.example.demo.users.repository.UserRepository;
+
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

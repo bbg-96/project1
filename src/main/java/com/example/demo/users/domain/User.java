@@ -1,5 +1,5 @@
 // src/main/java/com/example/demo/domain/User.java
-package com.example.demo.domain;
+package com.example.demo.users.domain;
 
 import jakarta.persistence.*;
 

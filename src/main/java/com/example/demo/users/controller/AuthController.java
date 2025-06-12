@@ -1,7 +1,8 @@
-package com.example.demo.controller;
+package com.example.demo.users.controller;
 
-import com.example.demo.dto.SignupRequest;
-import com.example.demo.service.UserService;        // ← 추가
+import com.example.demo.users.dto.SignupRequest;
+import com.example.demo.users.service.UserService;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;                // ← 추가
 import org.springframework.web.bind.annotation.GetMapping;

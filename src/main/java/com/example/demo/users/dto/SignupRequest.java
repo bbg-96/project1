@@ -1,5 +1,5 @@
 // src/main/java/com/example/demo/dto/SignupRequest.java
-package com.example.demo.dto;
+package com.example.demo.users.dto;
 
 public class SignupRequest {
     private String username;

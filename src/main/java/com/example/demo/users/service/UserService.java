@@ -1,8 +1,9 @@
-package com.example.demo.service;
+package com.example.demo.users.service;
 
-import com.example.demo.domain.User;
-import com.example.demo.dto.SignupRequest;
-import com.example.demo.repository.UserRepository;
+import com.example.demo.users.domain.User;
+import com.example.demo.users.dto.SignupRequest;
+import com.example.demo.users.repository.UserRepository;
+
 import org.slf4j.Logger;                           // ← 추가
 import org.slf4j.LoggerFactory;                    // ← 추가
 import org.springframework.security.crypto.password.PasswordEncoder;  // ← 추가

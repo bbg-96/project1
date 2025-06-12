@@ -1,9 +1,16 @@
 spring:
   datasource:
-    url: jdbc:postgresql://192.168.0.7:5432/demo_db   # ← VM IP에 맞춰 수정
-    username: demo_user
-    password: '03474506'
-    driver-class-name: org.postgresql.Driver
+    users:
+      jdbc-url:      ${SPRING_DATASOURCE_USERS_URL}
+      username: ${SPRING_DATASOURCE_USERS_USERNAME}
+      password: ${SPRING_DATASOURCE_USERS_PASSWORD}
+      driver-class-name: org.postgresql.Driver
+      
+    posts:
+      jdbc-url:      ${SPRING_DATASOURCE_POSTS_URL}
+      username: ${SPRING_DATASOURCE_POSTS_USERNAME}
+      password: ${SPRING_DATASOURCE_POSTS_PASSWORD}
+      driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
       ddl-auto: update      # 개발 단계용. 운영은 none + Flyway/Liquibase

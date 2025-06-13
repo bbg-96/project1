@@ -1,16 +1,24 @@
 spring:
+  session:
+    store-type: redis
+    timeout: 30m
+  data:
+    redis:
+      host: 192.168.0.15
+      port: 6379
+
   datasource:
     users:
       jdbc-url:      ${SPRING_DATASOURCE_USERS_URL}
       username: ${SPRING_DATASOURCE_USERS_USERNAME}
       password: ${SPRING_DATASOURCE_USERS_PASSWORD}
       driver-class-name: org.postgresql.Driver
-      
     posts:
       jdbc-url:      ${SPRING_DATASOURCE_POSTS_URL}
       username: ${SPRING_DATASOURCE_POSTS_USERNAME}
       password: ${SPRING_DATASOURCE_POSTS_PASSWORD}
       driver-class-name: org.postgresql.Driver
+
   jpa:
     hibernate:
       ddl-auto: update      # 개발 단계용. 운영은 none + Flyway/Liquibase
@@ -18,12 +26,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     open-in-view: false
-  session:
-    store-type: redis
-    timeout: 30m
-  redis:
-    host: 192.168.0.15
-    port: 6379
+
 logging:
   level:
     org.springframework.security: debug

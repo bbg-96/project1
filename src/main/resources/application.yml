@@ -18,6 +18,12 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     open-in-view: false
+  session:
+    store-type: redis
+    timeout: 30m
+  redis:
+    host: 192.168.0.15
+    port: 6379
 logging:
   level:
     org.springframework.security: debug

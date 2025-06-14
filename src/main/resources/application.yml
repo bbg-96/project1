@@ -32,6 +32,8 @@ logging:
     org.springframework.security: debug
 
 management:
+  server:
+    port: 9091
   endpoints:
     web:
       exposure:

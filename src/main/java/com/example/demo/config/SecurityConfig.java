@@ -35,7 +35,7 @@ public class SecurityConfig {
                     "/", "/css/**", "/js/**", "/images/**",
                     "/login", "/signup", "/error"
                 ).permitAll()
-                .requestMatchers("/actuator/health", "/actuator/info").permitAll()
+                .requestMatchers("/actuator/health", "/actuator/info", "/actuator/prometheus").permitAll()
                 // 그 외는 인증 필요
                 .anyRequest().authenticated()
             )

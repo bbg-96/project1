@@ -9,19 +9,19 @@ spring:
 
   datasource:
     users:
-      jdbc-url:      ${SPRING_DATASOURCE_USERS_URL}
+      jdbc-url: ${SPRING_DATASOURCE_USERS_URL}
       username: ${SPRING_DATASOURCE_USERS_USERNAME}
       password: ${SPRING_DATASOURCE_USERS_PASSWORD}
       driver-class-name: org.postgresql.Driver
     posts:
-      jdbc-url:      ${SPRING_DATASOURCE_POSTS_URL}
+      jdbc-url: ${SPRING_DATASOURCE_POSTS_URL}
       username: ${SPRING_DATASOURCE_POSTS_USERNAME}
       password: ${SPRING_DATASOURCE_POSTS_PASSWORD}
       driver-class-name: org.postgresql.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update      # 개발 단계용. 운영은 none + Flyway/Liquibase
+      ddl-auto: update # 개발 단계용. 운영은 none + Flyway/Liquibase
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
@@ -30,3 +30,13 @@ spring:
 logging:
   level:
     org.springframework.security: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, health, info
+  metrics:
+    export:
+      prometheus:
+        enabled: true

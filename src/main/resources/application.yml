@@ -1,3 +1,18 @@
+server:
+  port: 8080
+
+management:
+  server:
+    port: 9091
+  endpoints:
+    web:
+      exposure:
+        include: prometheus, health, info
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
 spring:
   session:
     store-type: redis
@@ -30,15 +45,3 @@ spring:
 logging:
   level:
     org.springframework.security: debug
-
-management:
-  server:
-    port: 9091
-  endpoints:
-    web:
-      exposure:
-        include: prometheus, health, info
-  metrics:
-    export:
-      prometheus:
-        enabled: true

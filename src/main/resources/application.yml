@@ -1,12 +1,10 @@
 management:
-  # management.server.port: 9091   # 메인 포트와 분리하고 싶으면 주석 해제
+  server:
+    port: 9091           # Actuator만 9091
   endpoints:
     web:
       exposure:
-        include:
-          - prometheus
-          - health
-          - info
+        include: prometheus,health,info
   metrics:
     export:
       prometheus:

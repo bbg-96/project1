@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.posts.domain.Post;
 import com.example.demo.posts.repository.PostRepository;
-import com.example.demo.posts.service.PostService;
 
 import java.util.Map;
 
@@ -18,7 +17,6 @@ import java.util.Map;
 public class PostRestController {
 
     private final PostRepository postRepo;
-    private final PostService postService;
 
     @PutMapping("/{id}")
     @PreAuthorize("@postService.isOwner(#id, authentication) or hasRole('ADMIN')")

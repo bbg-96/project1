@@ -1,17 +1,10 @@
-server:
-  port: 8080            # 비즈니스 포트
-
-management:
-  server:
-    port: 9200          # Actuator 전용
-  endpoints:
-    web:
-      exposure:
-        include:
-          - health
-          - info
-          - prometheus
-  metrics.export.prometheus.enabled: true
+management:  
+  endpoints:  
+    prometheus:  
+      enabled: true  
+    web:  
+      exposure:  
+        include: prometheus
 
 spring:
   session:

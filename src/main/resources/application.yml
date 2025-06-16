@@ -3,7 +3,7 @@ server:
 
 management:
   server:
-    port: 9091          # Actuator 전용
+    port: 9100          # Actuator 전용
   endpoints:
     web:
       exposure:

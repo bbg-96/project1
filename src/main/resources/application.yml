@@ -1,5 +1,17 @@
 server:
-  port: 8080
+  port: 8080            # 비즈니스 포트
+
+management:
+  server:
+    port: 9091          # Actuator 전용
+  endpoints:
+    web:
+      exposure:
+        include:
+          - health
+          - info
+          - prometheus
+  metrics.export.prometheus.enabled: true
 
 spring:
   session:
@@ -30,19 +42,3 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     open-in-view: false
-
-management:
-  server:
-    port: 9091           # Actuator만 9091
-  endpoints:
-    web:
-      exposure:
-        include: prometheus,health,info
-  metrics:
-    export:
-      prometheus:
-        enabled: true
-
-logging:
-  level:
-    org.springframework.security: debug

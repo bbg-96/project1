@@ -2,21 +2,11 @@ spring:
   session:
     store-type: redis
     timeout: 30m
+
   data:
     redis:
       host: 192.168.0.15
       port: 6379
-
-management:
-  server:
-  endpoints:
-    web:
-    exposure:
-      include: prometheus,health,info
-  metrics:
-    export:
-      prometheus:
-        enabled: true
 
   datasource:
     users:
@@ -32,11 +22,25 @@ management:
 
   jpa:
     hibernate:
-      ddl-auto: update # 개발 단계용. 운영은 none + Flyway/Liquibase
+      ddl-auto: update        # 운영은 none + Flyway/Liquibase
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     open-in-view: false
+
+management:
+  # management.server.port: 9091   # 메인 포트와 분리하고 싶으면 주석 해제
+  endpoints:
+    web:
+      exposure:
+        include:
+          - prometheus
+          - health
+          - info
+  metrics:
+    export:
+      prometheus:
+        enabled: true
 
 logging:
   level:

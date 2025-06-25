@@ -12,12 +12,12 @@ management:
 
 spring:
   session:
-    store-type: redis
+    store-type: ${SPRING_REDIS_HOST}
     timeout: 30m
 
   data:
     redis:
-      host: 192.168.0.15
+      host: 175.125.65.121
       port: 6379
 
   datasource:

@@ -1,0 +1,13 @@
+services:
+  my-spring-app:  # 서비스 이름 (임의 지정 가능)
+    image: my-spring-app:v1  # Docker 이미지 지정
+    ports:        # 포트 매핑
+      - "8080:8080"
+    environment:  # 컨테이너에 전달할 환경변수
+      SPRING_DATASOURCE_USERS_URL: "jdbc:postgresql://175.125.65.121:15432/demo_db"
+      SPRING_DATASOURCE_USERS_USERNAME: "demo_user"
+      SPRING_DATASOURCE_USERS_PASSWORD: "03474506"
+      SPRING_DATASOURCE_POSTS_URL: "jdbc:postgresql://175.125.65.121:15433/posts_db"
+      SPRING_DATASOURCE_POSTS_USERNAME: "posts_user"
+      SPRING_DATASOURCE_POSTS_PASSWORD: "03474506"
+      SPRING_REDIS_HOST: "175.125.65.121"

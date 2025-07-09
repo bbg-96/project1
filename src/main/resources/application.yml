@@ -19,6 +19,9 @@ spring:
     redis:
       host: ${SPRING_REDIS_HOST}
       port: 6380
+      password: ${SPRING_REDIS_ACCESS_KEY}
+      ssl:
+        enabled: true
 
   datasource:
     users:

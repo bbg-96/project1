@@ -1,14 +1,8 @@
 management:
-  server:
-    port: 9091             # 애플리케이션(8080)과 분리
   endpoints:
     web:
       exposure:
-        include: "health,info,prometheus"
-  metrics:
-    export:
-      prometheus:
-        enabled: true       # 기본값이지만 명시해두면 명확
+        include: "*"
 
 spring:
   session:
